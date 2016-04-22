@@ -20,7 +20,7 @@
 			<key>Codec</key>
 			<string>Mirone - Realtek ALC280 - ComboJack</string>
 			<key>CodecID</key>
-			<real>283902592</real>
+			<integer>283902592</integer>
 			<key>ConfigData</key>
 			<data>ASccMAEnHZABJx6gAScfkAFHHEABRx1AAUceFwFHH5kBVxxQAVcdQAFXHisBVx8BAaccYAGnHTABpx6LAacfAQFHDAIBVwwC</data>
 			<key>FuncGroup</key>
