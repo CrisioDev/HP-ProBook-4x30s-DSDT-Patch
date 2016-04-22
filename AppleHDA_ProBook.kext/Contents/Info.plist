@@ -111,14 +111,14 @@
 					AwAAAA==
 					</data>
 					<key>Codec</key>
-					<string>Mirone - Realtek ALC280 - combojack</string>
+					<string>Mirone - Realtek ALC280 - ComboJack</string>
 					<key>CodecID</key>
-					<integer>283902592</integer>
+					<real>283902592</real>
 					<key>ConfigData</key>
 					<data>
-					ASccEAEnHQABJx6gAScfkAFHHCABRx0AAUce
-					FwFHH5ABVxwwAVcdEAFXHiEBVx8CAaccQAGn
-					HRABpx6BAacfAgFHDAIBVwwC
+					ASccMAEnHZABJx6gAScfkAFHHEABRx1AAUce
+					FwFHH5kBVxxQAVcdQAFXHisBVx8BAaccYAGn
+					HTABpx6LAacfAQFHDAIBVwwC
 					</data>
 					<key>FuncGroup</key>
 					<integer>1</integer>
