@@ -56,8 +56,8 @@ HACK:=$(HACK) $(BUILDDIR)/SSDT-IGPU.aml $(BUILDDIR)/SSDT-IGPU-HIRES.aml
 HACK:=$(HACK) $(BUILDDIR)/SSDT-BATT.aml $(BUILDDIR)/SSDT-BATT-G2.aml $(BUILDDIR)/SSDT-BATT-G3.aml
 HACK:=$(HACK) $(BUILDDIR)/SSDT-KEY87.aml $(BUILDDIR)/SSDT-KEY102.aml
 # depends on hardware (USB optimization)
-HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-4x0s-G2.aml $(BUILDDIR)/SSDT-USB-4x40s.aml $(BUILDDIR)/SSDT-USB-4x30s.aml
-HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-8x0s-G1.aml
+HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-4x0-G2.aml $(BUILDDIR)/SSDT-USB-4x40s.aml $(BUILDDIR)/SSDT-USB-4x30s.aml
+HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-8x0-G1.aml
 HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-820-G2.aml $(BUILDDIR)/SSDT-USB-840-G2.aml $(BUILDDIR)/SSDT-USB-850-G2.aml
 HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-6x60.aml $(BUILDDIR)/SSDT-USB-6x70.aml
 HACK:=$(HACK) $(BUILDDIR)/SSDT-USB-8x60.aml
@@ -83,7 +83,7 @@ HACK:=$(HACK) $(BUILDDIR)/SSDT-4x0-G3-Skylake.aml
 # system specfic config.plist
 PLIST:=$(PLIST) config/config_4x30s.plist config/config_4x40s.plist
 PLIST:=$(PLIST) config/config_4x0s_G0.plist config/config_4x0s_G1_Ivy.plist
-PLIST:=$(PLIST) config/config_8x0s_G1_Ivy.plist config/config_9x70m.plist
+PLIST:=$(PLIST) config/config_8x0_G1_Ivy.plist config/config_9x70m.plist
 PLIST:=$(PLIST) config/config_6x60p.plist config/config_8x60p.plist config/config_6x70p.plist config/config_8x70p.plist
 PLIST:=$(PLIST) config/config_2x70p.plist
 PLIST:=$(PLIST) config/config_3x0_G1.plist
@@ -328,7 +328,7 @@ install_8x0g1_ivy_hires:
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(BUILDDIR)/SSDT-8x0-G1-Ivy.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 	cp $(BUILDDIR)/SSDT-KEY102.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
-	cp $(BUILDDIR)/SSDT-USB-8x0s-G1.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
+	cp $(BUILDDIR)/SSDT-USB-8x0-G1.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 .PHONY: install_4x0g1_haswell
 install_4x0g1_haswell:
@@ -361,7 +361,7 @@ install_4x0g2_haswell:
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(BUILDDIR)/SSDT-4x0-G2-Haswell.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 	cp $(BUILDDIR)/SSDT-KEY102.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
-	cp $(BUILDDIR)/SSDT-USB-4x0s-G2.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
+	cp $(BUILDDIR)/SSDT-USB-4x0-G2.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 .PHONY: install_8x0g2_haswell
 install_8x0g2_haswell:
@@ -379,7 +379,7 @@ install_4x0g2_broadwell:
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(BUILDDIR)/SSDT-4x0-G2-Broadwell.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 	cp $(BUILDDIR)/SSDT-KEY102.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
-	cp $(BUILDDIR)/SSDT-USB-4x0s-G2.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
+	cp $(BUILDDIR)/SSDT-USB-4x0-G2.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 .PHONY: install_820g2_broadwell
 install_820g2_broadwell:
@@ -433,7 +433,7 @@ install_4x0g3_skylake:
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(BUILDDIR)/SSDT-4x0-G3-Skylake.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 	cp $(BUILDDIR)/SSDT-KEY102.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
-	cp $(BUILDDIR)/SSDT-USB-4x0s-G3.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
+	cp $(BUILDDIR)/SSDT-USB-4x0-G3.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 $(HDAINJECT) $(HDAHCDINJECT): $(RESOURCES)/*.plist ./patch_hda.sh
 	./patch_hda.sh $(HDA)
